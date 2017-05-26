@@ -1,6 +1,7 @@
 # cmake_catch_coverage
 
 Integration of CMake, Catch and CMake CodeCoverage module for C++ code.
+(CMake CodeCoverage depends on: gcov, gcovr, genhtml, lcov.)
 
 ## Setup
 
@@ -19,7 +20,7 @@ test build and test execution (without coverage)
 
 test build, test execution (with coverage) and coverage observation
 
-    ch build/
+    cd build/
     cmake ..
     make unit_tests_coverage
     xdg-open coverage/src/index.html
