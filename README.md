@@ -23,4 +23,4 @@ test build, test execution (with coverage) and coverage observation
     cd build/
     cmake ..
     make unit_tests_coverage
-    xdg-open coverage/src/index.html
+    xdg-open ./coverage/index.html
