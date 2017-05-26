@@ -10,7 +10,16 @@ install test build environment tools (Ubuntu)
 
 ## Usage
 
+test build and test execution (without coverage)
+
     cd build/
     cmake ..
     make unit_tests
     ./unit_tests
+
+test build, test execution (with coverage) and coverage observation
+
+    ch build/
+    cmake ..
+    make unit_tests_coverage
+    xdg-open coverage/src/index.html

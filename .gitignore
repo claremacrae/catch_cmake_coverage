@@ -44,3 +44,6 @@ CTestTestfile.cmake
 
 # unit test executable
 build/unit_tests
+
+# coverage results
+build/coverage
