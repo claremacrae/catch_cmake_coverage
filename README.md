@@ -11,12 +11,12 @@ install test build environment tools (Ubuntu)
 
 ## Usage
 
-test build and test execution (with .xml result piping into `build/unit_test_result.html`, without coverage analysis)
+test build and test execution (with junit format .xml result piping into `build/unit_test_result.html`, without coverage analysis)
 
     cd build/
     cmake ..
     make unit_tests
-    ./unit_tests -r xml > unit_test_result.xml
+    ./unit_tests -r junit > unit_test_result.xml
 
 test build, test execution (with coverage analysis) and coverage observation
 
