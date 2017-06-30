@@ -11,14 +11,14 @@ install test build environment tools (Ubuntu)
 
 ## Usage
 
-test build and test execution (without coverage)
+test build and test execution (with .xml result piping into `build/unit_test_result.html`, without coverage analysis)
 
     cd build/
     cmake ..
     make unit_tests
-    ./unit_tests
+    ./unit_tests -r xml > unit_test_result.xml
 
-test build, test execution (with coverage) and coverage observation
+test build, test execution (with coverage analysis) and coverage observation
 
     cd build/
     cmake ..
