@@ -47,6 +47,7 @@ build/unit_tests
 
 # coverage results
 build/coverage
+build/unit_test_result.xml
 
 # CLion files
 cmake-build-*/
