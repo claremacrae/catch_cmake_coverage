@@ -53,6 +53,8 @@ TEST_CASE("Test condition coverage")
     int i = 40;
     if ( i > 40)
     {
+        // When i is const, CLion's coverage shows this in grey, not red
+        // The same is true of the lcov output
         std::cout << "true\n";
     }
     else
