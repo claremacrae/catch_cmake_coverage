@@ -10,7 +10,7 @@ using namespace std;
 TEST_CASE("Check fails but does not break the test run", "[PublicMemberFunction]") {
   ClassUnderTest cut;
   int directTestInput = 1;
-  int expectedDirectTestOutput = 43;
+  int expectedDirectTestOutput = 42;
   CHECK(expectedDirectTestOutput == cut.PublicMemberFunction(directTestInput));
 }
 
