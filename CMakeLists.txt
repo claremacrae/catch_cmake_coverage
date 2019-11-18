@@ -24,7 +24,7 @@ if(ENABLE_CODE_COVERAGE)
     append_coverage_compiler_flags()
 
     # exclude /test and /ext directories from coverage analysis
-    set(LCOV_REMOVE_EXTRA "'test/*'" "'ext/*'")
+    set(COVERAGE_LCOV_EXCLUDES "'test/*'" "'ext/*'")
 
     # cmake code coverage module target
     setup_target_for_coverage_lcov(
