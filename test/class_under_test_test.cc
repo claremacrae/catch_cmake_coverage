@@ -62,3 +62,33 @@ TEST_CASE("Test condition coverage")
         std::cout << "false\n";
     }
 }
+
+void process_bools(bool a, bool b, bool c, bool d)
+{
+    if (a && b && c && d )
+    {
+        cout << "cond 1 true\n";
+    }
+    if ((a || b) || (c || d))
+    {
+        cout << "cond 2 true\n";
+    }
+}
+
+TEST_CASE("Test condition coverage of process_bools")
+{
+    auto both_bools = {true, false};
+    for (auto a : both_bools)
+    {
+        for (auto b : both_bools)
+        {
+            for (auto c : both_bools)
+            {
+                for (auto d : both_bools)
+                {
+                    process_bools(a, b, c, d);
+                }
+            }
+        }
+    }
+}

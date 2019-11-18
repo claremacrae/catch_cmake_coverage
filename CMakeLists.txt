@@ -4,6 +4,9 @@ project(catch_cmake_coverage)
 
 set(CMAKE_VERBOSE_MAKEFILE off)
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # --- Coverage specific configuration --- start
 # required: Coverage or Debug
 # (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
