@@ -21,7 +21,7 @@ test build and test execution (with junit format .xml result piping into `build/
 test build, test execution (with coverage analysis) and coverage observation
 
     cd build/
-    cmake ..
+    cmake .. -DENABLE_CODE_COVERAGE=on
     make unit_tests_coverage
     xdg-open ./unit_tests_coverage/index.html
 
