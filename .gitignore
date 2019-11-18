@@ -47,3 +47,7 @@ build/unit_tests
 
 # coverage results
 build/coverage
+
+# CLion files
+cmake-build-*/
+.idea/
