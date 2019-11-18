@@ -24,3 +24,18 @@ test build, test execution (with coverage analysis) and coverage observation
     cmake ..
     make unit_tests_coverage
     xdg-open ./coverage/index.html
+
+## Clare Macrae's extra notes
+
+### Generating branch coverage
+
+Based on [this question](https://stackoverflow.com/questions/12360167/generating-branch-coverage-data-for-lcov), you need to have the following lines enabled in your `~/.lcovrc` file:
+
+```
+genhtml_branch_coverage = 1
+lcov_branch_coverage = 1
+```
+
+On a Mac, with lcov installed via brew, you will want to look at `/usr/local/etc/lcovrc`, not `/etc/lcovrc`
+
+See the reference docs: [lcovrc - lcov configuration file](http://ltp.sourceforge.net/coverage/lcov/lcovrc.5.php).

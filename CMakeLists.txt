@@ -49,7 +49,6 @@ target_link_libraries(unit_tests)
 
 # ---------------------------------------------
 # Understanding the code coverage capabilities
-# TODO Understand whether this coverage tool does branch coverage
 # TODO Understand what tools exactly are being used here
 # TODO Understand how to clean out results of previous test runs
 # TODO See whether HTML charts show unreachable lines in red (when new test is made const)
