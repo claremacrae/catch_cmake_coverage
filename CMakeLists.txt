@@ -38,7 +38,7 @@ target_link_libraries(unit_tests)
 # Understanding the CMake mechanisms in this project
 # TODO Understand/remove messages "clang: warning: argument unused during compilation: '--coverage' [-Wunused-command-line-argument]"
 # TODO Understand how the targets work
-# TODO Use the latest cmake coverage module
+# TODO Use the latest cmake coverage module - this will require changes to our cmake files first
 # TODO Fix the errors "profiling: /Users/clare/Documents/develop/CMake/catch_cmake_coverage-claremacrae/cmake-build-debug/CMakeFiles/unit_tests.dir/test/class_under_test_test.cc.gcda: cannot merge previous GCDA file: corrupt arc tag (0x766e695f)"
 
 # ---------------------------------------------
