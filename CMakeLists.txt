@@ -19,8 +19,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 # include the cmake code coverage module
 include(CodeCoverage)
 
-# test coverage build configuration for C++: debug build, no optimization, profiling enabled
-set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
+# Update the default compiler flags to enable coverage
+append_coverage_compiler_flags()
 
 # exclude /test and /ext directories from coverage analysis
 set(LCOV_REMOVE_EXTRA "'test/*'" "'ext/*'")
@@ -54,5 +54,4 @@ target_link_libraries(unit_tests)
 
 # ---------------------------------------------
 # Understanding the CLion code coverage capabilities
-# TODO Remove the need to set CMAKE_CXX_FLAGS here
 # TODO Get CLion to show unreachable lines in red (when new test is made const)
