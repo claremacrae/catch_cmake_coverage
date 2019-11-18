@@ -45,7 +45,6 @@ target_link_libraries(unit_tests)
 # TODO Understand how the targets work
 # TODO Use the latest cmake coverage module - this will require changes to our cmake files first
 # TODO Fix the errors "profiling: /Users/clare/Documents/develop/CMake/catch_cmake_coverage-claremacrae/cmake-build-debug/CMakeFiles/unit_tests.dir/test/class_under_test_test.cc.gcda: cannot merge previous GCDA file: corrupt arc tag (0x766e695f)"
-# TODO Don't measure coverage in tests of Catch2 REQUIRE and CHECK macros
 
 # ---------------------------------------------
 # Understanding the code coverage capabilities

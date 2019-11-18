@@ -39,3 +39,11 @@ lcov_branch_coverage = 1
 On a Mac, with lcov installed via brew, you will want to look at `/usr/local/etc/lcovrc`, not `/etc/lcovrc`
 
 See the reference docs: [lcovrc - lcov configuration file](http://ltp.sourceforge.net/coverage/lcov/lcovrc.5.php).
+
+### Excluding Catch2 test macros from the branch coverage
+
+Add this to your `~/.lcovrc` file:
+
+```
+lcov_excl_br_line = LCOV_EXCL_BR_LINE|CHECK|REQUIRE
+```
