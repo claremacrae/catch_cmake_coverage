@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # --- Coverage specific configuration --- start
 # required: Coverage or Debug
 # (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
-set(CMAKE_BUILD_TYPE Coverage)
+set(CMAKE_BUILD_TYPE Debug)
 
 # add the project specific cmake modules directory to the cmake module path
 # (w.r.t. CI/CD builds this is not the best approach)
@@ -26,7 +26,10 @@ set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
 set(LCOV_REMOVE_EXTRA "'test/*'" "'ext/*'")
 
 # cmake code coverage module target
-setup_target_for_coverage(unit_tests_coverage unit_tests coverage)
+setup_target_for_coverage_lcov(
+        NAME unit_tests_coverage
+        EXECUTABLE unit_tests
+        DEPENDENCIES unit_tests)
 # --- Coverage specific configuration --- end
 
 set(catch_includes ${PROJECT_SOURCE_DIR}/ext)
@@ -43,7 +46,6 @@ target_link_libraries(unit_tests)
 # Understanding the CMake mechanisms in this project
 # TODO Understand/remove messages "clang: warning: argument unused during compilation: '--coverage' [-Wunused-command-line-argument]"
 # TODO Understand how the targets work
-# TODO Use the latest cmake coverage module - this will require changes to our cmake files first
 # TODO Fix the errors "profiling: /Users/clare/Documents/develop/CMake/catch_cmake_coverage-claremacrae/cmake-build-debug/CMakeFiles/unit_tests.dir/test/class_under_test_test.cc.gcda: cannot merge previous GCDA file: corrupt arc tag (0x766e695f)"
 
 # ---------------------------------------------

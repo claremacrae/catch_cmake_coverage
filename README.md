@@ -23,7 +23,7 @@ test build, test execution (with coverage analysis) and coverage observation
     cd build/
     cmake ..
     make unit_tests_coverage
-    xdg-open ./coverage/index.html
+    xdg-open ./unit_tests_coverage/index.html
 
 ## Clare Macrae's extra notes
 

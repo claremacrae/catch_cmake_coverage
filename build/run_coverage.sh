@@ -1,3 +1,3 @@
 cmake ..
 make unit_tests_coverage
-open ./coverage/index.html
+open ./unit_tests_coverage/index.html
