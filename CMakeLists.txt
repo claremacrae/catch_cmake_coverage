@@ -7,30 +7,36 @@ set(CMAKE_VERBOSE_MAKEFILE off)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# --- Coverage specific configuration --- start
-# required: Coverage or Debug
-# (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
-set(CMAKE_BUILD_TYPE Debug)
+option(ENABLE_CODE_COVERAGE "Enable coverage reporting" OFF)
 
-# add the project specific cmake modules directory to the cmake module path
-# (w.r.t. CI/CD builds this is not the best approach)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+if(ENABLE_CODE_COVERAGE)
+    message(STATUS "Enable Code Coverage")
 
-# include the cmake code coverage module
-include(CodeCoverage)
+    # --- Coverage specific configuration --- start
+    # required: Coverage or Debug
+    # (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
+    set(CMAKE_BUILD_TYPE Debug)
 
-# Update the default compiler flags to enable coverage
-append_coverage_compiler_flags()
+    # add the project specific cmake modules directory to the cmake module path
+    # (w.r.t. CI/CD builds this is not the best approach)
+    set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-# exclude /test and /ext directories from coverage analysis
-set(LCOV_REMOVE_EXTRA "'test/*'" "'ext/*'")
+    # include the cmake code coverage module
+    include(CodeCoverage)
 
-# cmake code coverage module target
-setup_target_for_coverage_lcov(
-        NAME unit_tests_coverage
-        EXECUTABLE unit_tests
-        DEPENDENCIES unit_tests)
-# --- Coverage specific configuration --- end
+    # Update the default compiler flags to enable coverage
+    append_coverage_compiler_flags()
+
+    # exclude /test and /ext directories from coverage analysis
+    set(LCOV_REMOVE_EXTRA "'test/*'" "'ext/*'")
+
+    # cmake code coverage module target
+    setup_target_for_coverage_lcov(
+            NAME unit_tests_coverage
+            EXECUTABLE unit_tests
+            DEPENDENCIES unit_tests)
+    # --- Coverage specific configuration --- end
+endif()
 
 set(catch_includes ${PROJECT_SOURCE_DIR}/ext)
 set(includes_production ${PROJECT_SOURCE_DIR}/inc)
@@ -55,4 +61,4 @@ target_link_libraries(unit_tests)
 # ---------------------------------------------
 # Understanding the CLion code coverage capabilities
 # TODO Get CLion to show unreachable lines in red (when new test is made const)
-# TODO Make the coverage optional - and allow Release builds to work too
+# TODO Stop overriding Release config
