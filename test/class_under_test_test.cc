@@ -47,3 +47,16 @@ TEST_CASE("REQUIRE APPROXimate float by absolute error") {
   float expectedDirectOutput = M_PI;  // pi
   REQUIRE(Approx(M_PI).margin(allowedMargin) == cut.GetPi());
 }
+
+TEST_CASE("Test condition coverage")
+{
+    int i = 40;
+    if ( i > 40)
+    {
+        std::cout << "true\n";
+    }
+    else
+    {
+        std::cout << "false\n";
+    }
+}
