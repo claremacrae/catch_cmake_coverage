@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.6)
 
 project(catch_cmake_coverage)
 
+set(CMAKE_VERBOSE_MAKEFILE off)
+
 # --- Coverage specific configuration --- start
 # required: Coverage or Debug
 # (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
