@@ -55,3 +55,4 @@ target_link_libraries(unit_tests)
 # ---------------------------------------------
 # Understanding the CLion code coverage capabilities
 # TODO Get CLion to show unreachable lines in red (when new test is made const)
+# TODO Make the coverage optional - and allow Release builds to work too
