@@ -34,9 +34,20 @@ file(GLOB_RECURSE sources_test test/*.cc)
 add_executable(unit_tests ${sources_test} ${sources_production})
 target_link_libraries(unit_tests)
 
+# ---------------------------------------------
+# Understanding the CMake mechanisms in this project
 # TODO Understand/remove messages "clang: warning: argument unused during compilation: '--coverage' [-Wunused-command-line-argument]"
 # TODO Understand how the targets work
-# TODO Understand whether this coverage tool does branch coverage
-# TODO Understand what tolls exactly are being used here
 # TODO Use the latest cmake coverage module
+
+# ---------------------------------------------
+# Understanding the code coverage capabilities
+# TODO Understand whether this coverage tool does branch coverage
+# TODO Understand what tools exactly are being used here
+# TODO Understand how to clean out results of previous test runs
+# TODO See whether HTML charts show unreachable lines in red (when new test is made const)
+
+# ---------------------------------------------
+# Understanding the CLion code coverage capabilities
 # TODO Remove the need to set CMAKE_CXX_FLAGS here
+# TODO Get CLion to show unreachable lines in red (when new test is made const)
