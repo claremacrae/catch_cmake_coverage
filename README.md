@@ -11,7 +11,7 @@ install test build environment tools (Ubuntu)
 
 ## Usage
 
-test build and test execution (with junit format .xml result piping into `build/unit_test_result.html`, without coverage analysis)
+test build and test execution (with junit format .xml result piping into `build/unit_test_result.xml`, without coverage analysis)
 
     cd build/
     cmake ..
