@@ -33,3 +33,10 @@ file(GLOB_RECURSE sources_test test/*.cc)
 
 add_executable(unit_tests ${sources_test} ${sources_production})
 target_link_libraries(unit_tests)
+
+# TODO Understand/remove messages "clang: warning: argument unused during compilation: '--coverage' [-Wunused-command-line-argument]"
+# TODO Understand how the targets work
+# TODO Understand whether this coverage tool does branch coverage
+# TODO Understand what tolls exactly are being used here
+# TODO Use the latest cmake coverage module
+# TODO Remove the need to set CMAKE_CXX_FLAGS here
