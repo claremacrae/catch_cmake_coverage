@@ -9,6 +9,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(ENABLE_CODE_COVERAGE "Enable coverage reporting" OFF)
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    # Fix linker errors such as this, with clang-8:
+    #   Undefined symbols for architecture x86_64:
+    #     "std::runtime_error::what() const", referenced from:
+    #         vtable for testing::internal::GoogleTestFailureException in libgtestd.a(gtest-all.cc.o)
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lstdc++")
+endif()
+
 if(ENABLE_CODE_COVERAGE)
     message(STATUS "Enable Code Coverage")
 
