@@ -13,10 +13,6 @@ if(ENABLE_CODE_COVERAGE)
     message(STATUS "Enable Code Coverage")
 
     # --- Coverage specific configuration --- start
-    # required: Coverage or Debug
-    # (alternativelly via command line option: cmake -DCMAKE_BUILD_TYPE=Coverage ..)
-    set(CMAKE_BUILD_TYPE Debug)
-
     # add the project specific cmake modules directory to the cmake module path
     # (w.r.t. CI/CD builds this is not the best approach)
     set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
@@ -61,4 +57,3 @@ target_link_libraries(unit_tests)
 # ---------------------------------------------
 # Understanding the CLion code coverage capabilities
 # TODO Get CLion to show unreachable lines in red (when new test is made const)
-# TODO Stop overriding Release config
