@@ -51,6 +51,8 @@ file(GLOB_RECURSE sources_test test/*.cc)
 
 add_executable(unit_tests ${sources_test} ${sources_production})
 target_link_libraries(unit_tests)
+enable_testing()
+add_test(NAME unit_tests COMMAND unit_tests)
 
 # ---------------------------------------------
 # Understanding the CMake mechanisms in this project
